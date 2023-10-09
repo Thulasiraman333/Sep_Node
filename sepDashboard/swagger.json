@@ -1,0 +1,159 @@
+{
+  "openapi":"3.0.0",
+  "info":{
+    "description":"This is the api for users"
+  },
+  "tags":[
+    {
+      "name":"PUBLIC ROUTE",
+      "description":"public route"
+    }
+  ],
+  "paths":{
+    "/health":{
+      "summary":"Testing User Check",
+      "get":{
+        "description":"Use Api Health Check",
+        "tags":["Public Route"],
+        "responses":{
+          "200":{
+            "description":"User Health Pass"
+          }
+        }
+      }
+    },
+    "/users":{
+      "summary":"Testing User route",
+      "get":{
+        "description":"Use Api Check",
+        "tags":["Public Route"],
+        "parameters":[
+          {
+            "in":"query",
+            "name":"role",
+            "schema":{
+              "type":"string"
+            },
+            "description":"Choose role as Admin or user"
+          },
+          {
+            "in":"query",
+            "name":"city",
+            "schema":{
+              "type":"string"
+            },
+            "description":"Enter City Name"
+          }
+        ],
+        "responses":{
+          "200":{
+            "description":"User Health Pass"
+          }
+        }
+      }
+    },
+    "/user/{id}":{
+      "summary":"Testing User route",
+      "get":{
+        "description":"Use Api Check",
+        "tags":["Public Route"],
+        "parameters":[
+          {
+            "in":"path",
+            "name":"id",
+            "required":true,
+            "schema":{
+              "type":"string"
+            },
+            "description":"Choose role as Admin or user"
+          }
+        ],
+        "responses":{
+          "200":{
+            "description":"User Health Pass"
+          }
+        }
+      }
+    },
+    "/addUser":{
+      "summary":"Testing User route",
+      "post":{
+        "description":"Use Api Check",
+        "tags":["Public Route"],
+        "requestBody":{
+          "required":true,
+          "content":{
+            "application/json":{
+              "schema":{
+                "type":"object",
+                "id":"string"               
+              },
+              "example":{
+                "name": "Punith",
+                "city": "Delhi",
+                "phone": 87878933,
+                "role": "User",
+                "isActive": true
+              }
+
+            }
+          }
+        }
+      }
+    },
+    "/updateUser":{
+      "summary":"Testing User route",
+      "put":{
+        "description":"Use Api Check",
+        "tags":["Public Route"],
+        "requestBody":{
+          "required":true,
+          "content":{
+            "application/json":{
+              "schema":{
+                "type":"object",
+                "id":"string"               
+              },
+              "example":{
+                "name": "Punith",
+                "city": "Delhi",
+                "phone": 87878933,
+                "role": "User",
+                "isActive": true
+              }
+
+            }
+          }
+        }
+      }
+    },
+    "/deleteUser":{
+      "summary":"Testing User route",
+      "delete":{
+        "description":"Use Api Check",
+        "tags":["Public Route"],
+        "requestBody":{
+          "required":true,
+          "content":{
+            "application/json":{
+              "schema":{
+                "type":"object",
+                "id":"string"               
+              },
+              "example":{
+                "name": "Punith",
+                "city": "Delhi",
+                "phone": 87878933,
+                "role": "User",
+                "isActive": true
+              }
+
+            }
+          }
+        }
+      }
+    }
+    
+  }
+
+}
